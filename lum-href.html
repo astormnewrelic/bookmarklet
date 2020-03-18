@@ -6,9 +6,9 @@
 </head>
 <body>
 <p>
-This crude bookmarklet scans the current page for `&lt;a/&gt;`nchors with a `data-url` attribute, looks for a URL slug in that data, and adds an `href` to the `&lt;a/&gt;`. It makes the assumption that slugs can always be appended to `https://nerdlife.datanerd.us/new-relic/` to get a full URL.
+This crude bookmarklet scans the current page for <code>&lt;a/&gt;</code>nchors with a <code>data-url</code> attribute, looks for a URL slug in that data, and adds an <code>href</code> to the <code>&lt;a/&gt;</code>. It makes the assumption that slugs can always be appended to <code>https://nerdlife.datanerd.us/new-relic/</code> to get a full URL.
 
-By turning these "data url `&lt;a/&gt;`nchors into real hyperlinks, we get back things like "open in new window/tab".
+By turning these "data url &lt;a/&gt;nchors into real hyperlinks, we get back things like "open in new window/tab".
 </p>
 <a href="javascript:void($('a[data-url]').map(function(k,item){const url = $(item).data('url');if(!url){return};if(!url.slug){return};if(!url.slug.en){return};const fullUrl = 'https://nerdlife.datanerd.us/new-relic/' + url.slug.en;$(item).attr('href',fullUrl);}))">lum links</a>
 </body>
